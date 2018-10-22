@@ -1,5 +1,5 @@
-import { createStore } from 'redux';
-
+import { createStore, applyMiddleware } from 'redux';
+import {logger} from 'redux-logger';
 const initialState = {
   count: 1
 }
@@ -18,5 +18,8 @@ const reducer = (state = initialState, action) => {
   return state;
 }
 
-const store = createStore(reducer);
+const store = createStore(
+  reducer,
+  applyMiddleware(logger)
+  );
 export default store;

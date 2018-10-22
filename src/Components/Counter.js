@@ -13,14 +13,10 @@ const Counter = (props) =>{
 }
 
 const mapStateToProps = (state) => {
-  console.log("mapStateToProps");
-  return {
-    count: state.count
-  }
+  return {...state}
 }
 
 const mapDispatchToProps = (dispatch) =>{
-  console.log("mapDispatchToProps");
   return {
     onIncrementClick: () =>{
       const action = { type: "INCREMENT"};
